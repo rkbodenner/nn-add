@@ -1,5 +1,5 @@
 function [J, grad] = cost(...
-  Theta1, Theta2, ...
+  params, ...
   input_layer_size, hidden_layer_size, output_layer_size, ...
   X, Y, lambda)
 %COST implements the cost function and gradient computation for a two-layer
@@ -8,6 +8,8 @@ function [J, grad] = cost(...
 
 % Number of training examples
 m = size(X, 1);
+
+[Theta1, Theta2] = paramMatrixify(params, input_layer_size, hidden_layer_size, output_layer_size);
 
 Theta1_grad = zeros(size(Theta1));
 Theta2_grad = zeros(size(Theta2));
@@ -39,6 +41,6 @@ endfor
 Theta2_grad = (1/m) * Theta2_grad;
 Theta1_grad = (1/m) * Theta1_grad;
 
-grad = [Theta1_grad(:) ; Theta1_grad(:)];
+grad = [Theta1_grad(:) ; Theta2_grad(:)];
 
 end

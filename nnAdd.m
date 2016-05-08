@@ -37,6 +37,19 @@ fprintf("\n");
 % Regularization factor
 lambda = 0;
 
-J = cost(Theta1, Theta2, input_layer_size, hidden_layer_size, output_layer_size, X, y, lambda);
+init_params = [Theta1(:) ; Theta2(:)];
+J = cost(init_params, input_layer_size, hidden_layer_size, output_layer_size, X, y, lambda);
 
 fprintf('Initial cost: %f\n', J);
+
+% Training
+optopts = optimset('MaxIter', 50);
+costFn = @(p) cost(p, ...
+  input_layer_size, hidden_layer_size, output_layer_size, ...
+  X, y, lambda);
+
+[params, J] = fmincg(costFn, init_params, optopts);
+fprintf('Training complete. Final cost: %f\n', J);
+
+[final_Theta1, final_Theta2] = paramMatrixify(params, input_layer_size, hidden_layer_size, output_layer_size);
+h = predict(final_Theta1, final_Theta2, X);
