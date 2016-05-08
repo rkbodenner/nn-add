@@ -2,7 +2,9 @@ function [J, grad] = cost(...
   Theta1, Theta2, ...
   input_layer_size, hidden_layer_size, output_layer_size, ...
   X, Y, lambda)
-%COST implements the cost function for a two-layer neural network
+%COST implements the cost function and gradient computation for a two-layer
+%neural network. It returns the cost and the gradients suitable for use with
+%Matlab optimization solvers.
 
 % Number of training examples
 m = size(X, 1);
@@ -26,6 +28,17 @@ for i = 1:m
 endfor
 J = (1/m) * J;
 
-grad = [];
+% Backpropagation
+for t = 1:m
+  delta_L3 = a3(:,t) - Y(t,:);
+  delta_L2 = (Theta2(:,2:end)' * delta_L3) .* sigmoidGradient(z2(:,t));
+  Theta2_grad = Theta2_grad + delta_L3 * a2(:,t)';
+  Theta1_grad = Theta1_grad + delta_L2 * a1(t,:);
+endfor
+
+Theta2_grad = (1/m) * Theta2_grad;
+Theta1_grad = (1/m) * Theta1_grad;
+
+grad = [Theta1_grad(:) ; Theta1_grad(:)];
 
 end
