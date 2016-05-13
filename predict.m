@@ -8,4 +8,6 @@ z2 = Theta1 * a1';
 a2 = [ones(1, m); sigmoid(z2)];
 z3 = Theta2 * a2;
 a3 = sigmoid(z3);
-h = a3;
+
+% Find the index of the strongest activation among the output nodes. This is the predicted result's value.
+[dummy, h] = max(a3, [], 2);

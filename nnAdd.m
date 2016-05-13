@@ -10,7 +10,7 @@ load('training-examples.mat');
 
 input_layer_size = 2;
 hidden_layer_size = 3;
-output_layer_size = 1;
+output_layer_size = 100;
 
 % Weights. These seem good.
 Theta1 = [
@@ -24,8 +24,8 @@ Theta2 = [
 ];
 
 % or randomly...
-%Theta1 = randInitWeights(input_layer_size, hidden_layer_size);
-%Theta2 = randInitWeights(hidden_layer_size, output_layer_size);
+Theta1 = randInitWeights(input_layer_size, hidden_layer_size);
+Theta2 = randInitWeights(hidden_layer_size, output_layer_size);
 
 fprintf("Initial weights\n");
 fprintf("Theta1\n");
