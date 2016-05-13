@@ -10,20 +10,10 @@ load('training-examples.mat');
 
 input_layer_size = 2;
 hidden_layer_size = 3;
-output_layer_size = 100;
+output_layer_size = 99;  % One label for each possible integer result value
 
-% Weights. These seem good.
-Theta1 = [
-  0.101237  -0.045077 -0.069981 ;
-  0.030126 -0.071757 -0.116876 ;
-  0.004693 -0.044443 0.007245
-];
+fprintf("Architecture: %d -> %d -> %d\n", input_layer_size, hidden_layer_size, output_layer_size);
 
-Theta2 = [
-  0.032645 -0.061070 0.064763 -0.066527
-];
-
-% or randomly...
 Theta1 = randInitWeights(input_layer_size, hidden_layer_size);
 Theta2 = randInitWeights(hidden_layer_size, output_layer_size);
 
@@ -35,7 +25,9 @@ fprintf("%f\n", Theta2);
 fprintf("\n");
 
 % Regularization factor
-lambda = 0;
+lambda = 1;
+
+fprintf("Lambda: %f\n", lambda);
 
 init_params = [Theta1(:) ; Theta2(:)];
 J = cost(init_params, input_layer_size, hidden_layer_size, output_layer_size, X, y, lambda);

@@ -47,6 +47,27 @@ endfor
 Theta2_grad = (1/m) * Theta2_grad;
 Theta1_grad = (1/m) * Theta1_grad;
 
+% Regularize
+J = J + (...
+  (lambda/(2*m)) * (...
+    sum(...
+      sum(...
+        Theta1(:,2:end).^2
+      )
+    ) +
+    sum(...
+      sum(...
+        Theta2(:,2:end).^2
+      )
+    )
+  )
+);
+
+% Ignore the bias terms by inserting zeroes
+Theta1_grad = Theta1_grad + (lambda/m)*[zeros(hidden_layer_size,1) Theta1(:,2:end)];
+Theta2_grad = Theta2_grad + (lambda/m)*[zeros(output_layer_size,1) Theta2(:,2:end)];
+
+% Unroll gradients into a vector
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
 
 end
