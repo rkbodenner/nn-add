@@ -41,7 +41,10 @@ costFn = @(p) cost(p, ...
   X, y, lambda);
 
 [params, J] = fmincg(costFn, init_params, optopts);
-fprintf('Training complete. Final cost: %f\n', J);
+fprintf('Training iteration complete. Cost: %f\n', J);
 
 [final_Theta1, final_Theta2] = paramMatrixify(params, input_layer_size, hidden_layer_size, output_layer_size);
 h = predict(final_Theta1, final_Theta2, X);
+
+error = sum(h' != y) / size(y,1);
+fprintf("Training classification error: %f\n");
