@@ -1,4 +1,4 @@
-function h = predict(Theta1, Theta2, X)
+function p = predict(Theta1, Theta2, X)
 %PREDICT Predict the label of an input given a trained two-layer neural network
 
 m = size(X, 1);
@@ -10,4 +10,4 @@ z3 = Theta2 * a2;
 a3 = sigmoid(z3);
 
 % Find the index of the strongest activation among the output nodes. This is the predicted result's value.
-[dummy, h] = max(a3, [], 2);
+[dummy, p] = max(a3);
