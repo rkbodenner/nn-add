@@ -1,0 +1,197 @@
+Architecture: 2 -> 128 -> 50
+Lambda: 0.000000
+Initial cost: 36.463104
+Iteration    25 | Cost: 4.229127e+00
+Training iteration complete. Cost: 17.730926
+Training iteration complete. Cost: 5.541390
+Training iteration complete. Cost: 5.485518
+Training iteration complete. Cost: 5.332478
+Training iteration complete. Cost: 5.005666
+Training iteration complete. Cost: 4.832628
+Training iteration complete. Cost: 4.770711
+Training iteration complete. Cost: 4.722148
+Training iteration complete. Cost: 4.659788
+Training iteration complete. Cost: 4.622410
+Training iteration complete. Cost: 4.564602
+Training iteration complete. Cost: 4.510872
+Training iteration complete. Cost: 4.478018
+Training iteration complete. Cost: 4.455163
+Training iteration complete. Cost: 4.390055
+Training iteration complete. Cost: 4.368387
+Training iteration complete. Cost: 4.337123
+Training iteration complete. Cost: 4.318006
+Training iteration complete. Cost: 4.307286
+Training iteration complete. Cost: 4.292069
+Training iteration complete. Cost: 4.284417
+Training iteration complete. Cost: 4.280132
+Training iteration complete. Cost: 4.274842
+Training iteration complete. Cost: 4.253960
+Training iteration complete. Cost: 4.229127
+Training classification error: 0.886667
+Validation classification error: 0.915000
+Test classification error: 0.940000
+
+Architecture: 2 -> 256 -> 50
+Lambda: 0.100000
+Initial cost: 37.691524
+Iteration    25 | Cost: 4.139274e+00
+Training iteration complete. Cost: 17.795867
+Training iteration complete. Cost: 5.483671
+Training iteration complete. Cost: 5.147816
+Training iteration complete. Cost: 5.027898
+Training iteration complete. Cost: 4.802345
+Training iteration complete. Cost: 4.736649
+Training iteration complete. Cost: 4.666745
+Training iteration complete. Cost: 4.589982
+Training iteration complete. Cost: 4.530274
+Training iteration complete. Cost: 4.463540
+Training iteration complete. Cost: 4.403188
+Training iteration complete. Cost: 4.363942
+Training iteration complete. Cost: 4.331749
+Training iteration complete. Cost: 4.290174
+Training iteration complete. Cost: 4.266214
+Training iteration complete. Cost: 4.251284
+Training iteration complete. Cost: 4.237120
+Training iteration complete. Cost: 4.205173
+Training iteration complete. Cost: 4.189787
+Training iteration complete. Cost: 4.179031
+Training iteration complete. Cost: 4.173076
+Training iteration complete. Cost: 4.164918
+Training iteration complete. Cost: 4.156484
+Training iteration complete. Cost: 4.147417
+Training iteration complete. Cost: 4.139274
+Training classification error: 0.858333
+Validation classification error: 0.900000
+Test classification error: 0.935000
+
+Architecture: 2 -> 512 -> 50
+Lambda: 0.100000
+Initial cost: 34.821237
+Iteration    25 | Cost: 4.073166e+00
+Training iteration complete. Cost: 15.180906
+Training iteration complete. Cost: 5.076060
+Training iteration complete. Cost: 4.921738
+Training iteration complete. Cost: 4.846105
+Training iteration complete. Cost: 4.660422
+Training iteration complete. Cost: 4.491249
+Training iteration complete. Cost: 4.434618
+Training iteration complete. Cost: 4.399790
+Training iteration complete. Cost: 4.370751
+Training iteration complete. Cost: 4.315123
+Training iteration complete. Cost: 4.289278
+Training iteration complete. Cost: 4.256752
+Training iteration complete. Cost: 4.232115
+Training iteration complete. Cost: 4.217800
+Training iteration complete. Cost: 4.191048
+Training iteration complete. Cost: 4.158161
+Training iteration complete. Cost: 4.144018
+Training iteration complete. Cost: 4.132064
+Training iteration complete. Cost: 4.117005
+Training iteration complete. Cost: 4.110153
+Training iteration complete. Cost: 4.107444
+Training iteration complete. Cost: 4.096886
+Training iteration complete. Cost: 4.091091
+Training iteration complete. Cost: 4.083250
+Training iteration complete. Cost: 4.073166
+Training classification error: 0.840000
+Validation classification error: 0.870000
+Test classification error: 0.910000
+
+Architecture: 2 -> 1024 -> 50
+Lambda: 0.100000
+Initial cost: 50.486756
+Iteration    25 | Cost: 4.139722e+00
+Training iteration complete. Cost: 9.549127
+Training iteration complete. Cost: 8.580040
+Training iteration complete. Cost: 8.120852
+Training iteration complete. Cost: 6.269116
+Training iteration complete. Cost: 5.932251
+Training iteration complete. Cost: 5.558102
+Training iteration complete. Cost: 5.226168
+Training iteration complete. Cost: 4.957334
+Training iteration complete. Cost: 4.899036
+Training iteration complete. Cost: 4.767031
+Training iteration complete. Cost: 4.699374
+Training iteration complete. Cost: 4.618423
+Training iteration complete. Cost: 4.585396
+Training iteration complete. Cost: 4.544081
+Training iteration complete. Cost: 4.449042
+Training iteration complete. Cost: 4.323950
+Training iteration complete. Cost: 4.277461
+Training iteration complete. Cost: 4.255384
+Training iteration complete. Cost: 4.246404
+Training iteration complete. Cost: 4.234284
+Training iteration complete. Cost: 4.222417
+Training iteration complete. Cost: 4.199919
+Training iteration complete. Cost: 4.168351
+Training iteration complete. Cost: 4.148002
+Training iteration complete. Cost: 4.139722
+Training classification error: 0.871667
+Validation classification error: 0.895000
+Test classification error: 0.920000
+
+Architecture: 2 -> 512 -> 50
+Lambda: 0.500000
+Initial cost: 35.372150
+Iteration    25 | Cost: 4.121865e+00
+Training iteration complete. Cost: 15.610709
+Training iteration complete. Cost: 5.213466
+Training iteration complete. Cost: 4.979898
+Training iteration complete. Cost: 4.846888
+Training iteration complete. Cost: 4.670964
+Training iteration complete. Cost: 4.559621
+Training iteration complete. Cost: 4.504971
+Training iteration complete. Cost: 4.468648
+Training iteration complete. Cost: 4.382458
+Training iteration complete. Cost: 4.357569
+Training iteration complete. Cost: 4.346991
+Training iteration complete. Cost: 4.337257
+Training iteration complete. Cost: 4.299166
+Training iteration complete. Cost: 4.291754
+Training iteration complete. Cost: 4.281379
+Training iteration complete. Cost: 4.260682
+Training iteration complete. Cost: 4.232492
+Training iteration complete. Cost: 4.203040
+Training iteration complete. Cost: 4.195400
+Training iteration complete. Cost: 4.186164
+Training iteration complete. Cost: 4.174781
+Training iteration complete. Cost: 4.171503
+Training iteration complete. Cost: 4.163608
+Training iteration complete. Cost: 4.142277
+Training iteration complete. Cost: 4.121865
+Training classification error: 0.835000
+Validation classification error: 0.840000
+Test classification error: 0.900000
+
+Architecture: 2 -> 512 -> 50
+Lambda: 1.000000
+Initial cost: 35.013648
+Iteration    25 | Cost: 4.168568e+00
+Training iteration complete. Cost: 15.463765
+Training iteration complete. Cost: 5.182581
+Training iteration complete. Cost: 5.009899
+Training iteration complete. Cost: 4.964795
+Training iteration complete. Cost: 4.792720
+Training iteration complete. Cost: 4.604775
+Training iteration complete. Cost: 4.552023
+Training iteration complete. Cost: 4.519219
+Training iteration complete. Cost: 4.486942
+Training iteration complete. Cost: 4.445707
+Training iteration complete. Cost: 4.425847
+Training iteration complete. Cost: 4.415853
+Training iteration complete. Cost: 4.382446
+Training iteration complete. Cost: 4.352800
+Training iteration complete. Cost: 4.339252
+Training iteration complete. Cost: 4.323890
+Training iteration complete. Cost: 4.309227
+Training iteration complete. Cost: 4.279935
+Training iteration complete. Cost: 4.239985
+Training iteration complete. Cost: 4.214852
+Training iteration complete. Cost: 4.206004
+Training iteration complete. Cost: 4.195015
+Training iteration complete. Cost: 4.189810
+Training iteration complete. Cost: 4.184799
+Training iteration complete. Cost: 4.168568
+Training classification error: 0.838333
+Validation classification error: 0.870000
+Test classification error: 0.910000

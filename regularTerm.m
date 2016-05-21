@@ -1,0 +1,16 @@
+function L = regularTerm(lambda, m, Theta1, Theta2)
+% REGULARTERM calculates the regularization term for logistic regression used
+% in a three-layer neural network
+
+L = (lambda/(2*m)) * (...
+  sum(...
+    sum(...
+      Theta1(:,2:end).^2
+    )
+  ) +
+  sum(...
+    sum(...
+      Theta2(:,2:end).^2
+    )
+  )
+);
