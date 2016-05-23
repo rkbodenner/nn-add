@@ -2,7 +2,7 @@
 
 % Load training examples, created with:
 %
-%X = floor(rand(10000,2) * 50);
+%X = floor(rand(100,2) * 2);
 %y = X(:,1) + X(:,2);
 %save -text training-examples.mat X y
 load('training-examples.mat');
@@ -14,13 +14,13 @@ mtest = m - mtrain - mval;
 Xtrain = X(1:mtrain,:);
 Xval = X(mtrain+1:mtrain+mval,:);
 Xtest = X(mtrain+mval+1:m,:);
-ytrain = Xtrain(:,1) + Xtrain(:,2);
-yval = Xval(:,1) + Xval(:,2);
-ytest = Xtest(:,1) + Xtest(:,2);
+ytrain = y(1:mtrain,:);
+yval = y(mtrain+1:mtrain+mval,:);
+ytest = y(mtrain+mval+1:m,:);
 
 input_layer_size = 2;
-hidden_layer_size = 128;
-output_layer_size = 99;  % One label for each possible integer result value
+hidden_layer_size = 3;
+output_layer_size = 1;  % Is the sum 2?
 
 fprintf("Architecture: %d -> %d -> %d\n", input_layer_size, hidden_layer_size, output_layer_size);
 
@@ -37,7 +37,7 @@ Theta2 = randInitWeights(hidden_layer_size, output_layer_size);
 %fprintf("\n");
 
 % Regularization factor
-lambda = 1.0;
+lambda = 0;
 
 fprintf("Lambda: %f\n", lambda);
 
@@ -55,16 +55,15 @@ costFn = @(p) cost(p, ...
 [params, J] = fmincg(costFn, init_params, optopts);
 fprintf('Training iteration complete. Cost: %f\n', J);
 
+% Measure error
+
 [final_Theta1, final_Theta2] = paramMatrixify(params, input_layer_size, hidden_layer_size, output_layer_size);
 
-h = predict(final_Theta1, final_Theta2, Xtrain);
-error = sum(h' != ytrain) / size(ytrain,1);
-fprintf("Training classification error: %f\n", error);
+[hTrain, errorTrain] = measureError(final_Theta1, final_Theta2, Xtrain, ytrain);
+fprintf("Training classification error:     %f\n", errorTrain);
 
-h = predict(final_Theta1, final_Theta2, Xval);
-error = sum(h' != yval) / size(yval,1);
-fprintf("Validation classification error: %f\n", error);
+[hVal, errorVal] = measureError(final_Theta1, final_Theta2, Xval, yval);
+fprintf("Validation classification error:   %f\n", errorVal);
 
-h = predict(final_Theta1, final_Theta2, Xtest);
-error = sum(h' != ytest) / size(ytest,1);
-fprintf("Test classification error: %f\n", error);
+[hTest, errorTest] = measureError(final_Theta1, final_Theta2, Xtest, ytest);
+fprintf("Test classification error:         %f\n", errorTest);

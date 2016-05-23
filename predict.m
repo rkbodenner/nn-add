@@ -9,7 +9,7 @@ a2 = [ones(1, m); sigmoid(z2)];
 z3 = Theta2 * a2;
 a3 = sigmoid(z3);
 
-% Find the index of the strongest activation among the output nodes. This is the predicted result's value.
-[dummy, p] = max(a3);
-% 1st element represents the value 0, 2nd 1, etc.
-p = p - 1;
+% p = outputFromOneHotLabels(a3);
+
+% Convert outputs over the sigmoid threshold into 1s
+p = (a3 > 0.5);

@@ -1,5 +1,5 @@
 function Y = oneHotLabels(output_layer_size, y)
-% ONEHOTLABELS converts training result values y to a matrix of
+% ONEHOTLABELS converts training output values y to a matrix of
 % one-hot column vectors whose ith value is hot (==1) when the result
 % value+1 == i. For example, if a result is 42, the label vector Y(:,i) is:
 % [0; 0; ... 1; 0; 0] where the 1 is at Y(43,i).

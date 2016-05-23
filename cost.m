@@ -22,8 +22,10 @@ z3 = Theta2 * a2;
 a3 = sigmoid(z3);
 H = a3;
 
-% Convert training result values to labels
+% Convert training output values to labels
 Y = oneHotLabels(output_layer_size, y);
+Y = y == 2;
+Y = Y';
 
 % Cost
 for i = 1:m
