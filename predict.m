@@ -11,3 +11,5 @@ a3 = sigmoid(z3);
 
 % Find the index of the strongest activation among the output nodes. This is the predicted result's value.
 [dummy, p] = max(a3);
+% 1st element represents the value 0, 2nd 1, etc.
+p = p - 1;
