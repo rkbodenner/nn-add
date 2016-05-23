@@ -23,11 +23,7 @@ a3 = sigmoid(z3);
 H = a3;
 
 % Convert training result values to labels
-Y = zeros(output_layer_size, size(y));
-for i = 1:size(y)
-  % 1st element represents the value 0, 2nd 1, etc.
-  Y(y(i)+1, i) = 1;
-endfor
+Y = oneHotLabels(output_layer_size, y);
 
 % Cost
 for i = 1:m
