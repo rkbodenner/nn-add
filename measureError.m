@@ -4,7 +4,4 @@ function [h,error] = measureError(Theta1, Theta2, X, y)
 
 h = predict(Theta1, Theta2, X);
 
-% Map outputs to the single feature: Is the output of the target value?
-y = y == 2;
-
 error = sum(h' != y) / size(y,1);

@@ -1,11 +1,13 @@
-% Neural network for learning to add pairs of numbers 50 > x >= 0
+% Neural network for learning to add pairs of positive numbers within a limited interval
+
+max_operand_value = 1;
 
 % Load training examples, created with:
 %
-%X = floor(rand(100,2) * 2);
-%y = X(:,1) + X(:,2);
+X = floor(rand(100,2) * (max_operand_value+1));
+y = X(:,1) + X(:,2);
 %save -text training-examples.mat X y
-load('training-examples.mat');
+%load('training-examples.mat');
 
 m = size(X,1);
 mtrain = 0.6 * m;
@@ -20,7 +22,7 @@ ytest = y(mtrain+mval+1:m,:);
 
 input_layer_size = 2;
 hidden_layer_size = 3;
-output_layer_size = 1;  % Is the sum 2?
+output_layer_size = (max_operand_value*2)+1;  % One label per possible output value
 
 fprintf("Architecture: %d -> %d -> %d\n", input_layer_size, hidden_layer_size, output_layer_size);
 

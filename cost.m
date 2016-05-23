@@ -24,8 +24,6 @@ H = a3;
 
 % Convert training output values to labels
 Y = oneHotLabels(output_layer_size, y);
-Y = y == 2;
-Y = Y';
 
 % Cost
 for i = 1:m
